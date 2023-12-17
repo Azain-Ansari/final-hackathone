@@ -26,7 +26,7 @@ router.post('/add-student', upload.any(), async (req, res, next) => {
         !req.body.firstName || !req.body.lastName
         || !req.body.email || !req.body.password
         || !req.body.course || !req.body.phoneNumber
-        || !req.files
+        || !req?.files
     ) {
         res.status(400).send({
             message: `required parameters missing eample requies body: 
@@ -56,7 +56,7 @@ router.post('/add-student', upload.any(), async (req, res, next) => {
             password: req.body.password,
             course: req.body.course,
             phoneNumber: req.body.phoneNumber,
-            profileImage: cloudinaryResponse.url,
+            profileImage: cloudinaryResponse?.url,
             isAdmin: false,
             checkInTime: new Date(),
             checkOutTime: new Date(),

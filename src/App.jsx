@@ -24,6 +24,7 @@ const App = () => {
 
   const location = useLocation();
 
+  // custom hook
   useEffect(() => {
     axios.interceptors.request.use(
       function (config) {
